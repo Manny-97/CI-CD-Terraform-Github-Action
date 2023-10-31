@@ -28,9 +28,9 @@ jobs:
       run: |
         terraform init
         terraform plan -out=terraform.tfplan \
-          -var "AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY_ID }}" \
+          -var "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" \
           -var "AWS_REGION=${{ secrets.AWS_REGION }}" \
-          -var "AWS_SECRET_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
+          -var "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}"
       working-directory: CI-CD-Terraform-Github-Action/main.tf
       
     - name: Terraform Apply

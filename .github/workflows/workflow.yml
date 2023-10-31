@@ -18,12 +18,8 @@ jobs:
       with:
         terraform_version: 1.0.4
 
-    - name: Configure AWS credentials
-      run: |
-        echo ${{ secrets.AWS_ACCESS_KEY_ID }} > ~/.aws/credentials
-        echo ${{ secrets.AWS_SECRET_ACCESS_KEY }} >> ~/.aws/credentials
       env:
-        AWS_REGION: us-east-1  # Modify as needed
+        AWS_REGION: us-east-1
 
     - name: Terraform Init
       run: terraform init
